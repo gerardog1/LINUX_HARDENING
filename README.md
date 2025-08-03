@@ -5,33 +5,33 @@ Notes and Steps to Harden and Secure Linux Environment
 
 ## Hardening Steps Overview
 
-### 1. Created a Non-root User with Sudo Access  
-Instead of using the `root` account directly, I created a new user with sudo privileges to minimize risk if credentials are compromised.  
-[See full details ->](./01-non-root-user.md)
-
----
-
-### 2. Enabled Automatic Security Updates  
+### 1. Enabled Automatic Security Updates  
 Installed and configured `unattended-upgrades` to automatically apply security patches and reduce vulnerability exposure. 
-[See full details ->](./02-auto-updates.md)
+[See full details ->](./01-auto-updates.md)
 
 ---
 
-### 3. Configured UFW Firewall  
-Enabled UFW (Uncomplicated Firewall) to allow only essential traffic (like SSH) and block everything else, including ICMP ping requests.  
-[See full details ->](./03-ufw-firewall.md)
+### 2. Created a Non-root User with Sudo Access  
+Instead of using the `root` account directly, I created a new user with sudo privileges to minimize risk if credentials are compromised.  
+[See full details ->](./02-non-root-user.md)
 
 ---
 
-### 4. Disabled Password Authentication for SSH  
+### 3. Disabled Password Authentication for SSH  
 Set up SSH key-based authentication and disabled password login to protect against brute-force SSH attacks.  
-[See full details ->](./04-ssh-keys.md)
+[See full details ->](./03-ssh-keys.md)
 
 ---
 
-### 5. Changed the Default SSH Port  
+### 4. Harden SSH  
 Moved SSH from port 22 to a custom port using port forwarding to reduce noise from automated scans and bots.  
-[See full details ->](./05-change-ssh-port.md)
+[See full details ->](./04-change-ssh-port.md)
+
+---
+
+### 5. Configured UFW Firewall  
+Enabled UFW (Uncomplicated Firewall) to allow only essential traffic (like SSH) and block everything else, including ICMP ping requests.  
+[See full details ->](./05-ufw-firewall.md)
 
 ---
 
