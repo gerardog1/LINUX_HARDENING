@@ -11,3 +11,4 @@ Keeping software up to date is one of the easiest and most effective ways to red
 - Verifying update settings
 - Customizing Behavior
 ## Commands Used
+See [Commands](./commands.md) for exact steps and terminal commands.
