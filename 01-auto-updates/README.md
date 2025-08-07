@@ -8,7 +8,7 @@ Keeping software up to date is one of the easiest and most effective ways to red
 ## What This Covers
 - Installing the `unattended-upgrades` package
 - Enabling automatic updates
-- Verifying update settings
+- Manual Updates
 - Customizing Behavior
 ## Commands Used
 See [Commands](./commands.md) for exact steps and terminal commands.
