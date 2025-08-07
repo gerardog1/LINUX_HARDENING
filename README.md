@@ -1,5 +1,6 @@
 # LINUX_HARDENING
-Notes and Steps to Harden and Secure Linux Environment
+Notes and Steps to Harden and Secure Linux Environment 
+> Note: All commands were run from Windows Terminal using SSH into my Kali Linux VM.
 
 ---
 
