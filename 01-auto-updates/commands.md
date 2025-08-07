@@ -14,3 +14,6 @@ You will be prompted to enter your password for sudo permissions. Afterwards, yo
 sudo apt dist-upgrade
 ```
 This may take a while depending on how many packages you need to install. *This command goes beyond a simple upgrade by intelligently handling changes in package dependencies, potentially installing new packages or removing obsolete ones to resolve conflicts and ensure a smooth upgrade process.*
+
+---
+efefe
