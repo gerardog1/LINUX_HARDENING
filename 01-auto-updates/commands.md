@@ -36,4 +36,4 @@ sudo dpkg-reconfigure unattended-upgrades
 *This command prompts us with a question to enable automatic updates as seen below:*
 <img width="843" height="253" alt="image" src="https://github.com/user-attachments/assets/df1084db-8803-442d-bb09-15d590c7ba81" />
 
-Select Yes and press Enter.
+Select Yes, press Enter, and you're done.
