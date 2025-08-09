@@ -1,5 +1,6 @@
 # 02-Non Root User
 This section details how to create non root users and add them into the sudo group.
+> Note: If your terminal prompt already ends with $ instead of #, you are logged in as a non-root user and can skip this step.
 ## Why Create Non Root Users?
 Logging into a root account directly presents a significant security risk due to the extensive permissions and potential for misuse or compromise.
 
