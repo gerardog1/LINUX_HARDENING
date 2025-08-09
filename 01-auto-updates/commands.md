@@ -43,3 +43,5 @@ sudo dpkg-reconfigure unattended-upgrades
 <img width="843" height="253" alt="image" src="https://github.com/user-attachments/assets/df1084db-8803-442d-bb09-15d590c7ba81" />
 
 Select Yes, press Enter, and you're done.
+
+**Automatic updates are now enabled, ensuring your system stays up to date with the latest security patches and improvements without manual intervention.**
