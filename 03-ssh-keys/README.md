@@ -14,3 +14,6 @@ By storing the private key securely on your machine and only placing the matchin
 - Adding the public key to the server’s authorized keys.
 
 - Ensuring only devices with the matching private key can access the server.
+
+## Commands Used
+See [Commands](./commands.md) for exact steps and terminal commands.
