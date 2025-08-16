@@ -11,7 +11,7 @@ mkdir ~/.ssh && chmod 700 ~/.ssh
 
 These are two commands seperated by the `&&` operator. 
 
-*`mkdir ~/.ssh` — Creates a hidden directory called .ssh in the current user’s home folder. This is the standard location where SSH keys and configuration files are stored.*
+*`mkdir ~/.ssh` — Creates a hidden directory called .ssh in your current user’s home folder. This is the standard location where SSH keys and configuration files are stored.*
 
 *`chmod 700 ~/.ssh` — Sets the directory’s permissions so that only the owner can read, write, and execute inside it. This prevents other users from viewing or tampering with your SSH keys.*
 
@@ -26,26 +26,29 @@ ssh-keygen -b 4096
 ```
 > Note: This command will work on Mac, Linux, and Windows
 
-
-*Generates a new SSH key pair with a length of 4096 bits, providing stronger encryption than the default 2048 bits and making it significantly more resistant to brute-force attacks.*
+*`-b 4096` tells SSH to generate an RSA key with 4096 bits of length, which is more secure than the older 2048-bit default. However, if your system defaults to `ed25519` keys, this option is ignored unless you explicitly choose RSA with `-t rsa.`*
 
 After running the command, you’ll be prompted to choose where to save the key pair. 
 <img width="569" height="52" alt="image" src="https://github.com/user-attachments/assets/7321e1cc-c9a8-48c2-a5c8-f66c149d2cac" />
 
 Press Enter to accept the default location.
 
-By default, `ssh-keygen` suggests saving the key in your `~/.ssh` directory, with the filename based on the key type you choose (for example, id_ed25519 for ED25519 keys).
+*By default, ssh-keygen saves the key in your `~/.ssh` directory and names it according to the key type used (for example, `id_ed25519` for ED25519 keys or `id_rsa` for RSA keys).*
 
-If a key already exists at that location and you don’t want to overwrite it, type a different file name (e.g., ~/.ssh/id_ed25519_new) to save it separately.
+*If you don’t specify a type with -t, the default key type depends on your OpenSSH version (ED25519 on most modern systems, RSA on older ones).*
+
+If a key already exists at that location and you don’t want to overwrite it, type a different file name (e.g., `~/.ssh/id_ed25519_new`) to save it separately.
 
 You will also be prompted to enter a passphrase, this is optional. 
+> Note: A passphrase adds an extra layer of security by requiring it whenever the private key is used, but it’s not strictly necessary for every setup.
 
-A passphrase adds an extra layer of security by requiring it whenever the private key is used, but it’s not strictly necessary for every setup.
+<img width="139" height="157" alt="image" src="https://github.com/user-attachments/assets/aa5fbdd4-937e-44d3-a210-55d9d5c9d5bd" />
 
 Once complete, you’ll see confirmation that two files have been created — your private key and your public key — along with a visual fingerprint called randomart. This indicates your SSH key pair has been successfully generated.
 
-Now when we navigate to the .ssh folder and list the contents, we will be able to see our public key. Run these commands:
-WINDOWS
+Now when we navigate to the .ssh folder and list the contents, we will be able to see our public and private key. Run these commands:
+
+**WINDOWS:**
 ```bash
 cd .ssh
 ```
@@ -54,3 +57,12 @@ ls
 ```
 > Note: LINUX/MAC OS use cd ~/.ssh
 
+<img width="470" height="201" alt="image" src="https://github.com/user-attachments/assets/c6cbaea0-6cba-4308-9a5c-8c679fcf3d5c" />
+
+
+My public key here is `id_ed25519.pub`, and my private is `id_ed25519`. 
+
+If your keys are RSA, they will look something like: `id_rsa`, `id_rsa.pub`
+
+## Share Public Key to Linux Server
+This is our final step, we will share our public key to our Linux server in order to be able to use our private key for secure login.
