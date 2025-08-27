@@ -67,6 +67,23 @@ If your keys are RSA, they will look something like: `id_rsa`, `id_rsa.pub`
 ## Share Public Key to Linux Server
 Before we can send our public key from the host to our Linux server, we need to know the server’s IP address.
 
-To do this, shut down your VM and change its network mode to Bridged Networking. In VirtualBox, go to Settings > Network > Attached to: Bridged Adapter. Once you restart the VM, it will receive an IP address on your local network.
+To do this, shut down your VM and change its network mode to Bridged Networking. In VirtualBox, you can do this by going to Settings > Network > Attached to: Bridged Adapter. Once you restart the VM, it will receive an IP address on your local network.
 
-Run `ip a` inside the VM, look under eth0, and use whatever IP is listed as inet in your SSH/scp commands.”
+Run `ip a` inside the VM, look under eth0, and use whatever IP is listed as inet in your `SSH/scp` commands.”
+
+Once you've found your ip, you're going to use it in the following command:
+
+**WINDOWS**
+```bash
+scp $env:USERPROFILE/.ssh/id_ed25519.pub kali@<server_ip>:~/.ssh/authorized_keys
+```
+**LINUX**
+```bash
+ssh-copy-id kali@<server_ip>
+```
+**MAC OS**
+```bash
+scp ~/.ssh/id_ed25519.pub kali@<server_ip>:~/.ssh/authorized_keys
+```
+Now when
+
