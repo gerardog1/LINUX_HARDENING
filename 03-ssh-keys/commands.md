@@ -69,7 +69,7 @@ Before we can send our public key from the host to our Linux server, we need to 
 
 To do this, shut down your VM and change its network mode to Bridged Networking. In VirtualBox, you can do this by going to Settings > Network > Attached to: Bridged Adapter. Once you restart the VM, it will receive an IP address on your local network.
 
-Run `ip a` inside the VM, look under eth0, and use whatever IP is listed as inet in your `SSH/scp` commands.”
+Run `ip a` inside the VM, look under `eth0`, and use whatever IP is listed as `inet` in your `SSH/scp` commands.”
 
 Once you've found your ip, you're going to use it in the following command:
 
@@ -85,5 +85,18 @@ ssh-copy-id kali@<server_ip>
 ```bash
 scp ~/.ssh/id_ed25519.pub kali@<server_ip>:~/.ssh/authorized_keys
 ```
-Now when
+Your Linux Server now has your public key. Now you can ssh into your server without a password by using the secure key pair.
+
+## How to SSH into Linux Server
+Start your VM using your hypervisor (e.g., VirtualBox, VMware, Hyper-V). Make sure the VM is running before trying to SSH into it.
+
+Go to your host terminal and run:
+```bash
+ssh kali@<server-ip>
+```
+At this point, you’ve successfully logged into your VM over SSH using your key pair. This completes the process of setting up a more secure, passwordless connection to your server.
+
+
+
+
 
