@@ -2,7 +2,7 @@
 The steps for creating, configuring, and securing SSH key pairs.
 
 ## Making Directory & Setting Permissions
-Before anything, we have to run:
+Before anything, we have to run these commands in our Linux server:
 ```bash
 mkdir ~/.ssh && chmod 700 ~/.ssh
 ```
@@ -15,9 +15,9 @@ These are two commands seperated by the `&&` operator.
 
 *`chmod 700 ~/.ssh` — Sets the directory’s permissions so that only the owner can read, write, and execute inside it. This prevents other users from viewing or tampering with your SSH keys.*
 
-SSH will refuse to use keys from a directory that is too open (e.g., readable by others). Setting 700 (read, write, execute only for the owner) is a security best practice and required for proper SSH authentication.
+**SSH will refuse to use keys from a directory that is too open (e.g., readable by others).**
 
-**Skipping the permission step is a common cause of the “Permissions are too open” error when using SSH keys.**
+**Setting 700 (read, write, execute only for the owner) is a security best practice and required for proper SSH authentication.**
 
 ## Create the Keys
 Now logout of your Linux server, and go to your host machine's terminal. This is where we will be running the next command:
@@ -46,7 +46,7 @@ You will also be prompted to enter a passphrase, this is optional.
 
 Once complete, you’ll see confirmation that two files have been created — your private key and your public key — along with a visual fingerprint called randomart. This indicates your SSH key pair has been successfully generated.
 
-Now when we navigate to the .ssh folder and list the contents, we will be able to see our public and private key. Run these commands:
+Now when we navigate to the `.ssh` folder and list the contents, we will be able to see our public and private key. Run these commands:
 
 **WINDOWS:**
 ```bash
@@ -55,7 +55,7 @@ cd .ssh
 ```bash
 ls
 ```
-> Note: LINUX/MAC OS use cd ~/.ssh
+> Note: LINUX/MAC OS use `cd ~/.ssh` instead
 
 <img width="470" height="201" alt="image" src="https://github.com/user-attachments/assets/c6cbaea0-6cba-4308-9a5c-8c679fcf3d5c" />
 
@@ -69,9 +69,12 @@ Before we can send our public key from the host to our Linux server, we need to 
 
 To do this, shut down your VM and change its network mode to Bridged Networking. In VirtualBox, you can do this by going to Settings > Network > Attached to: Bridged Adapter. Once you restart the VM, it will receive an IP address on your local network.
 
-Run `ip a` inside the VM, look under `eth0`, and use whatever IP is listed as `inet` in your `SSH/scp` commands.”
+Run `ip a` inside the VM, look under `eth0`, and use whatever IP is listed as `inet`.
+```bash
+ip a
+```
 
-Once you've found your ip, you're going to use it in the following command:
+Once you've found your ip, keep the VM running and go to your host terminal and run you're the following command:
 
 **WINDOWS**
 ```bash
@@ -88,13 +91,13 @@ scp ~/.ssh/id_ed25519.pub kali@<server_ip>:~/.ssh/authorized_keys
 Your Linux Server now has your public key. Now you can ssh into your server without a password by using the secure key pair.
 
 ## How to SSH into Linux Server
-Start your VM using your hypervisor (e.g., VirtualBox, VMware, Hyper-V). Make sure the VM is running before trying to SSH into it.
+> Note: Make sure the VM is running before trying to SSH into it.
 
 Go to your host terminal and run:
 ```bash
 ssh kali@<server-ip>
 ```
-At this point, you’ve successfully logged into your VM over SSH using your key pair. This completes the process of setting up a more secure, passwordless connection to your server.
+**At this point, you’ve successfully logged into your VM over SSH using your key pair. This completes the process of setting up a more secure, passwordless connection to your server.**
 
 
 
