@@ -1,4 +1,4 @@
-# SSH Keys
+# 03-SSH Keys
 This section documents how to create public and private key pairs for secure SSH authentication.
 
 ## Why Create Key Pairs?
