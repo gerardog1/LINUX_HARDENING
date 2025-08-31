@@ -37,7 +37,7 @@ Press Enter to accept the default location.
 
 *If you don’t specify a type with -t, the default key type depends on your OpenSSH version (ED25519 on most modern systems, RSA on older ones).*
 
-If a key already exists at that location and you don’t want to overwrite it, type a different file name (e.g., `~/.ssh/id_ed25519_new`) to save it separately.
+If a key already exists at that location and you don’t want to overwrite it, type a different file name (e.g., `/.ssh/id_ed25519_new`) to save it separately.
 
 You will also be prompted to enter a passphrase, this is optional. 
 > Note: A passphrase adds an extra layer of security by requiring it whenever the private key is used, but it’s not strictly necessary for every setup.
@@ -48,15 +48,12 @@ Once complete, you’ll see confirmation that two files have been created — yo
 
 Now when we navigate to the `.ssh` folder and list the contents, we will be able to see our public and private key. Run these commands:
 
-**WINDOWS:**
 ```bash
 cd .ssh
 ```
 ```bash
 ls
 ```
-> Note: LINUX/MAC OS use `cd ~/.ssh` instead
-
 <img width="470" height="201" alt="image" src="https://github.com/user-attachments/assets/c6cbaea0-6cba-4308-9a5c-8c679fcf3d5c" />
 
 
@@ -74,7 +71,7 @@ Run `ip a` inside the VM, look under `eth0`, and use whatever IP is listed as `i
 ip a
 ```
 
-Once you've found your ip, keep the VM running and go to your host terminal and run you're the following command:
+Once you've found your ip, keep the VM running and go to your host terminal to run you're the following command:
 
 **WINDOWS**
 ```bash
