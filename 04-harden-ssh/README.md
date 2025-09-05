@@ -9,4 +9,12 @@ This section documents how to change the default SSH port in a Linux System.
 - By moving SSH to a non-standard port, you lower the number of brute-force attempts hitting your server, making logs cleaner and attacks less likely to succeed.
 
 ## What This Covers
-- 
+- Changing the default SSH port (to reduce automated attack attempts).
+- Disabling root login via SSH.
+- Enforcing key-based authentication instead of password-based login.
+- Restricting which users can SSH into the server.
+- Adjusting SSH configuration (`/etc/ssh/sshd_config`) for better security.
+- Restarting and testing the SSH service after changes.
+
+## Commands Used
+See full details here -->
