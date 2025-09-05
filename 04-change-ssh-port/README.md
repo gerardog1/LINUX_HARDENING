@@ -1,4 +1,4 @@
-# 04-Change-SSH-Port
+# 04-Harden-SSH
 This section documents how to change the default SSH port in a Linux System.
 
 ## Why Change SSH Port?
