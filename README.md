@@ -25,8 +25,8 @@ Set up SSH key-based authentication and disabled password login to protect again
 ---
 
 ### 4. Harden SSH  
-Moved SSH from port 22 to a custom port using port forwarding to reduce noise from automated scans and bots.  
-[See full details ->](./04-change-ssh-port)
+Moved SSH from port 22 to a custom port using port forwarding to reduce noise from automated scans and bots. As well as making changes to our SSH settings.  
+[See full details ->](./04-harden-ssh)
 
 ---
 
