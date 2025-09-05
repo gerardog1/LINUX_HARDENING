@@ -17,4 +17,4 @@ This section documents how to change the default SSH port in a Linux System.
 - Restarting and testing the SSH service after changes.
 
 ## Commands Used
-See full details here -->
+See [Commands](./commands.md) for exact steps and terminal commands.
