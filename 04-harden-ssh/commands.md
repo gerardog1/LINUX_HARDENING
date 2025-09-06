@@ -5,19 +5,37 @@ We use the `nano` text editor to open it:
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
+
+## SSH Hardening Changes
 Once the file opens up, here's what you need to look for:
 
-Navigate to where it says `#Port 22` (Port 22 is default)
+Navigate to where it says **`#Port 22`** (Port 22 is default)
 
-Delete the `#` to edit it, and change the `22` to another number. Choose a new SSH port number between **1024–65535** that isn’t already in use, ideally a random and uncommon number to reduce automated attacks.
+**Delete the `#` to edit it**, and change the `22` to another number. 
 
-Now locate "AddressFamily" and change it from the default `any` to `inet`. This forces SSH to use only IPv4, which reduces the attack surface by disabling unnecessary IPv6 connections if you don’t need them.
+Choose a new SSH port number between **1024–65535** that isn’t already in use, ideally a random and uncommon number to reduce automated attacks.
 
-Navigate to "PermitRootLogin" and change it from `yes` to `no`. This disables direct root logins over SSH, forcing users to authenticate with a normal account first and then escalate with sudo, which greatly reduces the risk of brute-force attacks and limits the damage if credentials are compromised.
+---
 
-Now go to "PasswordAuthentication" and change it from `yes` to `no`. This disables password-based logins, requiring SSH keys instead. This prevents brute-force attacks against user passwords and ensures only clients with a valid private key can connect.
+Now locate **"AddressFamily"** and change it from the default `any` to `inet`. 
 
-Now hit Ctrl+X, Y, then Enter to save your changes.
+This forces SSH to use only IPv4, which reduces the attack surface by disabling unnecessary IPv6 connections if you don’t need them.
+
+---
+
+Navigate to **"PermitRootLogin"** and change it from `yes` to `no`. 
+
+This disables direct root logins over SSH, forcing users to authenticate with a normal account first and then escalate with sudo, which greatly reduces the risk of brute-force attacks and limits the damage if credentials are compromised.
+
+---
+
+Now go to **"PasswordAuthentication"** and change it from `yes` to `no`. 
+
+This disables password-based logins, requiring SSH keys instead. This prevents brute-force attacks against user passwords and ensures only clients with a valid private key can connect.
+
+Now hit `Ctrl+X`, `Y`, then `Enter` to save your changes.
+
+---
 
 After making changes to `sshd_config`, the SSH service must be restarted for the new settings to take effect. Without restarting, the server will continue running with the old configuration.
 
