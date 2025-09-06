@@ -1,12 +1,12 @@
 # 04-Harden-SSH
-This section documents how to change the default SSH port in a Linux System.
+This section documents how to harden our SSH connections.
 
-## Why Change SSH Port?
-- Changing the default SSH port **(22)** is a common security hardening step in Linux.
+## Why Harden SSH?
+- SSH is the primary method for remotely accessing and managing Linux servers. Securing it is critical to prevent unauthorized access.
 
-- While it doesn’t replace proper authentication methods **(like key-based login)**, it helps reduce unwanted noise from automated bots and scanners that constantly probe **port 22** for vulnerabilities. 
+- Hardening SSH involves reducing attack surfaces, enforcing strong authentication, and limiting access to trusted users.
 
-- By moving SSH to a non-standard port, you lower the number of brute-force attempts hitting your server, making logs cleaner and attacks less likely to succeed.
+- While changing the default SSH port can help reduce automated attacks, combining this with key-based login, disabling root access, and user restrictions ensures a much more secure SSH environment.
 
 ## What This Covers
 - Changing the default SSH port (to reduce automated attack attempts).
