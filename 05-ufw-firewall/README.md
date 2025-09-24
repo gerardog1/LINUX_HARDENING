@@ -21,4 +21,7 @@ This section documents how to set up a secure UFW firewall.
 
 - Ensuring the firewall starts automatically on boot
 
+## Commands Used
+See [Commands](./commands.md) for exact steps and terminal commands.
+
 
