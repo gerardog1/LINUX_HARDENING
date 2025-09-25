@@ -25,7 +25,7 @@ sudo apt install ufw
 ```
 By defualt the firewall isn't enabled yet. We'll take this moment to allow our custom SSH port. Run:
 ```bash
-sudo ufw allow <custom-port>
+sudo ufw allow <custom_port>
 ```
 Once rules are updated, you can now enable the UFW. Run:
 ```bash
@@ -58,10 +58,15 @@ It should look like this:
 
 <img width="517" height="74" alt="image" src="https://github.com/user-attachments/assets/57c54443-f5a2-4ee5-b8fe-aeb30c6377e7" />
 
-Hit `Ctrl X, Y, Enter` to save changes.
+Hit `Ctrl+X, Y, Enter` to save changes.
 
 Changes to the UFW ICMP rules may not take effect immediately, so rebooting ensures ping requests are blocked as expected:
 ```bash
 sudo reboot
 ```
+
+To check if pings are actually being blocked, run ping requests from your host machine to your server. If the results show "Request Timed Out", then you’ve successfully blocked pings.
+
+<img width="310" height="108" alt="image" src="https://github.com/user-attachments/assets/801305ee-bd4f-4266-9bc6-6cc5aa11684c" />
+
 
