@@ -1,5 +1,5 @@
 # LINUX_HARDENING
-Notes and Steps to Harden and Secure Linux Environment 
+Notes and Steps to Harden and Secure Linux Environment. 
 > Note: All commands were run from Windows Powershell using SSH into my Kali Linux VM.
 
 ---
@@ -25,7 +25,7 @@ Set up SSH key-based authentication and disabled password login to protect again
 ---
 
 ### 4. Harden SSH  
-Moved SSH from port 22 to a custom port using port forwarding to reduce noise from automated scans and bots. As well as making changes to our SSH settings.  
+Moved SSH from the default port (22) to a custom port to reduce noise from automated scans and bots, and made additional SSH configuration changes for security. 
 [See full details ->](./04-harden-ssh)
 
 ---
@@ -38,7 +38,7 @@ Enabled UFW (Uncomplicated Firewall) to allow only essential traffic (like SSH) 
 
 ## Why I Did This
 
-I'm currently studying for the CompTIA Security+ certification and wanted hands-on practice with real-world Linux security techniques. This is just the start.  
+I'm currently studying for the CompTIA Security+ certification and wanted hands-on practice with real-world Linux security techniques.   
 These hardening steps helped me:
 - Understand secure system configuration
 - Apply the principle of least privilege
@@ -48,11 +48,11 @@ These hardening steps helped me:
 ---
 
 ## Tools & Commands Used
-- `adduser`, `usermod`, `sudo`, `nano`, `-tupln`
-- `apt`, `unattended-upgrades`
-- `ufw`, `status`, `enable`
-- `sshd_config`, `systemctl`, `ssh-keygen`
-- `scp`, `ssh`, `port forwarding`, `ss`
+- **User & Permissions:** `sudo adduser`, `sudo usermod -aG sudo yourusername`, `su - yourusername`  
+- **System Updates:** `sudo apt update`, `sudo apt upgrade`, `sudo apt dist-upgrade`, `sudo apt install unattended-upgrades`, `sudo dpkg-reconfigure unattended-upgrades`,   
+- **SSH Security:** `sshd_config`, `systemctl restart sshd`, `ssh-keygen`, `scp`, `ssh -p`  
+- **Firewall:** `ufw`, `ufw allow`, `ufw enable`, `ufw status`, `ss -tupln`  
+- **Network Security:** custom UFW rules for ICMP (ping blocking)  
 
 ---
 
