@@ -17,7 +17,7 @@ sudo ss -tupln
 
 In my case, I have two open ports: UDP 546 used by NetworkManager (DHCPv6 client) and TCP 654 used by sshd (SSH server).
 
-Since SSH is the only service we need for remote access, we will allow traffic to that port in UFW while all other ports remain blocked, keeping the server secure.
+Since SSH is the only service we require for remote administration, we configured UFW to allow traffic only to that port. All other incoming connections remain blocked, while DHCPv6 continues to function safely as an outgoing client service.
 ## Install & Configure UFW
 To install the UFW (Uncomplicated Firewall) Run:
 ```bash
