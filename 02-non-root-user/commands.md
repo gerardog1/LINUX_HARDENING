@@ -49,4 +49,6 @@ su - yourusername
 
 You’ll just need to enter the new user’s password when prompted.
 
+---
+
 **You are now operating from a safer, non-root account and can use sudo whenever administrative privileges are required.**
