@@ -94,6 +94,9 @@ Go to your host terminal and run:
 ```bash
 ssh kali@<server-ip>
 ```
+
+---
+
 **At this point, you’ve successfully logged into your VM over SSH using your key pair. This completes the process of setting up a more secure, passwordless connection to your server.**
 
 
