@@ -47,8 +47,8 @@ sudo systemctl restart sshd
 
 Open a new terminal window and try logging in using the updated port. This ensures the new configuration works before you close your original session.
 ```bash
-ssh <username>@<server_ip> -p <new_port> 
+ssh <username>@<server-ip> -p <custom-port> 
 ```
-> Note: Without the `-p <new_port>` option, SSH will default to port 22 and fail to connect. That’s exactly what we want — it means the server is no longer accepting connections on the default port.
+> Note: Without the `-p <custom-port>` option, SSH will default to port 22 and fail to connect. That’s exactly what we want — it means the server is no longer accepting connections on the default port.
 
 **With these changes, SSH is now hardened: it uses a non-standard port, enforces key-based login, restricts root access, and only allows trusted users, creating a much more secure environment for remote administration.**
