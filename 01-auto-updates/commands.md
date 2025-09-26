@@ -44,4 +44,6 @@ sudo dpkg-reconfigure unattended-upgrades
 
 Select Yes, press Enter, and you're done.
 
+---
+
 **Automatic updates are now enabled, ensuring your system stays up to date with the latest security patches and improvements without manual intervention.**
