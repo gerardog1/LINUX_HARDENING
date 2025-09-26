@@ -69,4 +69,8 @@ To check if pings are actually being blocked, run ping requests from your host m
 
 <img width="310" height="108" alt="image" src="https://github.com/user-attachments/assets/801305ee-bd4f-4266-9bc6-6cc5aa11684c" />
 
+---
+
+
+**You’ve now applied foundational security measures by configuring UFW to control network traffic and disabling ICMP ping responses. These steps greatly reduce your server’s exposure to common attacks, forming a strong base for further hardening.**
 
