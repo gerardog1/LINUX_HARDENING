@@ -1,4 +1,4 @@
-# 04-Harden-SSH Steps
+# SSH Hardening Steps
 To begin hardening SSH, we need to edit its main configuration file: `sshd_config`. This file controls how the SSH service behaves, including which port it listens on, who can log in, and what authentication methods are allowed.
 
 We use the `nano` text editor to open it:
