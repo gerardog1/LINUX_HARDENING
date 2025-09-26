@@ -50,17 +50,17 @@ These hardening steps helped me:
 ## Tools & Commands Used
 - **User & Permissions:** `sudo adduser`, `sudo usermod -aG sudo yourusername`, `su - yourusername`  
 - **System Updates:** `sudo apt update`, `sudo apt upgrade`, `sudo apt dist-upgrade`, `sudo apt install unattended-upgrades`, `sudo dpkg-reconfigure unattended-upgrades`,   
-- **SSH Security:** `sshd_config`, `systemctl restart sshd`, `ssh-keygen`, `scp`, `ssh -p`  
-- **Firewall:** `ufw`, `ufw allow`, `ufw enable`, `ufw status`, `ss -tupln`  
+- **SSH Security:** `sudo systemctl restart sshd`, `ssh-keygen -b 4096`, `scp $env:USERPROFILE/.ssh/id_ed25519.pub kali@<server_ip>:~/.ssh/authorized_keys`, `ssh kali@<server-ip> -p <custom-port>`, `mkdir ~/.ssh && chmod 700 ~/.ssh`, `ssh-copy-id kali@<server_ip>`, `scp ~/.ssh/id_ed25519.pub kali@<server_ip>:~/.ssh/authorized_keys`, `sudo nano /etc/ssh/sshd_config`, `  
+- **Firewall:** `sudo apt install ufw`, `sudo ufw allow <custom_port>`, `sudo ufw enable`, `sudo ufw status`, `sudo ss -tupln`  
 - **Network Security:** custom UFW rules for ICMP (ping blocking)  
 
 ---
 
 ## Next Steps 
-- Configure `fail2ban` for intrusion detection
 - Set up logging and alerts
-- Explore `auditd` for file monitoring
-- Document full recovery/backup plan
 - Explore and Learn a `SIEM` tool.
+- Configure `fail2ban` for intrusion detection
+- Explore `auditd` for file monitoring 
+- Document full recovery/backup plan 
 - Incident Response
 - Higher Level Hardening
