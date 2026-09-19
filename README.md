@@ -36,31 +36,9 @@ Enabled UFW (Uncomplicated Firewall) to allow only essential traffic (like SSH) 
 
 ---
 
-## Why I Did This
-
-I'm currently studying for the CompTIA Security+ certification and wanted hands-on practice with real-world Linux security techniques.   
-These hardening steps helped me:
-- Understand secure system configuration
-- Apply the principle of least privilege
-- Practice safe remote access techniques
-- Reduce my system’s attack surface
-
----
-
 ## Tools & Commands Used
 - **User & Permissions:** `sudo adduser`, `sudo usermod -aG sudo yourusername`, `su - yourusername`  
 - **System Updates:** `sudo apt update`, `sudo apt upgrade`, `sudo apt dist-upgrade`, `sudo apt install unattended-upgrades`, `sudo dpkg-reconfigure unattended-upgrades`,   
 - **SSH Security:** `sudo systemctl restart sshd`, `ssh-keygen -b 4096`, `scp $env:USERPROFILE/.ssh/id_ed25519.pub kali@<server_ip>:~/.ssh/authorized_keys`, `ssh kali@<server-ip> -p <custom-port>`, `mkdir ~/.ssh && chmod 700 ~/.ssh`, `ssh-copy-id kali@<server_ip>`, `scp ~/.ssh/id_ed25519.pub kali@<server_ip>:~/.ssh/authorized_keys`, `sudo nano /etc/ssh/sshd_config`, `  
 - **Firewall:** `sudo apt install ufw`, `sudo ufw allow <custom_port>`, `sudo ufw enable`, `sudo ufw status`, `sudo ss -tupln`  
 - **Network Security:** custom UFW rules for ICMP (ping blocking)  
-
----
-
-## Next Steps 
-- Set up logging and alerts
-- Explore and Learn a `SIEM` tool.
-- Configure `fail2ban` for intrusion detection
-- Explore `auditd` for file monitoring 
-- Document full recovery/backup plan 
-- Incident Response
-- Higher Level Hardening
